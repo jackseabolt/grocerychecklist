@@ -15,7 +15,7 @@ li {
 	color: white;
 	font-family: 'Gloria Hallelujah';
 	font-size: 25px;
-	line-height: 15px;
+	line-height: 35px;
 	border-radius: 5px;
 	background-color: #9ca4af;
 	border: 0px solid;
@@ -24,6 +24,8 @@ li {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
 	padding-bottom: 30px;
 	text-align: center;
 }
@@ -96,6 +98,6 @@ main {
 }
 @media only screen and (max-width: 800px){
 	li { 
-		width: 90%;
+		width: 80%;
 	}
 }
