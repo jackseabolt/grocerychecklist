@@ -91,9 +91,17 @@ function displayCounter(text){
 }
 
 function handleCounter(){
-  let totalChecked = getTotalChecked(STORE).toString(); 
-  let total = STORE.length.toString();
-  let finalResult = `${totalChecked}/${total}`;
+  let totalChecked = getTotalChecked(STORE); 
+  let total = STORE.length
+  let finalResult; 
+  if (total === 0 ){
+    finalResult = "";
+  } else if(totalChecked/total === 1) {
+    finalResult = "LIST COMPLETE"; 
+  }
+  else {
+    finalResult = `${totalChecked.toString()}/${total.toString()}`;
+  }
   displayCounter(finalResult); 
 }
 
