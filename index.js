@@ -1,6 +1,7 @@
 const STORE = [{name: "apples", checked: false},{name: "pears", checked: true}];
 
 function generateItemElement(item, index){
+  console.log('generated index was ' + index); 
   return `
   <li class="js-li-item" data-item-index="${index}">
     <h3 class="js-li-title ${item.checked ? 'checked' : '' }">${item.name}</h3>
@@ -42,14 +43,13 @@ function getItemIndex(item){
 
 function removeItemFromList(id){
   STORE.splice(id, 1);
-  console.log(`Item ${id} is being removed by removeItemFromList`);
+  console.log(`THIS ${id} is being removed by removeItemFromList`);
 }
 
 function handleRemoveButton(){
   $('ul').on("click", ".js-button-remove", function(){
-    console.log("handleRemoveButton ran")
-    const liId = getItemIndex(event.currentTarget); 
-    console.log(liId); 
+    const liId = getItemIndex($(this)); 
+    console.log("removing " + liId + " in handleRemoveButton"); 
     removeItemFromList(liId); 
     displayCheckList(); 
   });
