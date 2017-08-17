@@ -3,8 +3,8 @@ const STORE = [{name: "apples", checked: false},{name: "pears", checked: true}];
 function generateItemElement(item, index){
   console.log('generated index was ' + index); 
   return `
-  <li class="js-li-item" data-item-index="${index}">
-    <h3 class="js-li-title ${item.checked ? 'checked' : '' }">${item.name}</h3>
+  <li class="js-li-item ${item.checked ? 'complete' : '' }" data-item-index="${index}">
+    <h3 class="js-li-title">${item.name}</h3>
     <i class="fa fa-minus-circle js-button-remove" aria-hidden="true"></i>
     <i class="fa fa-check-circle js-button-check" aria-hidden="true"></i>
   </li>
@@ -36,6 +36,7 @@ function handleFormSubmit(){
     displayCheckList(); 
   });
 }
+
 function getItemIndex(item){
    const itemToParse = $(item).closest('li').attr("data-item-index");
    console.log("getItemIndex ran " + itemToParse); 
@@ -83,10 +84,12 @@ function getTotalChecked(objArr){
   }
   return total.length; 
 }
+
 function displayCounter(text){
   console.log(text); 
   $('#js-counter').html(text); 
 }
+
 function handleCounter(){
   let totalChecked = getTotalChecked(STORE).toString(); 
   let total = STORE.length.toString();
