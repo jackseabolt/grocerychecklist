@@ -1,6 +1,6 @@
 body {
 	margin: 0px;
-	padding: 25px;
+	padding: 25px 25px 45px 25px;
 }
 h1 {
 	font-family: 'Fjalla One', sans-serif;
@@ -19,11 +19,13 @@ li {
 	border-radius: 5px;
 	background-color: #9ca4af;
 	border: 0px solid;
-	width: 50%;
+	width: 40%;
 	margin-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 10px;
+	padding-bottom: 30px;
+	text-align: center;
 }
 .btn-submit {
 	background-color: #586596;
@@ -31,34 +33,39 @@ li {
 	color: white;
 	font-size: 14px;
 	border-radius: 5px;
-	border: 1px solid #455077; 
+	border: 1px solid #455077;
+	margin-top: 0px; 
 }
 .js-button-remove:hover {
 	color: #ce4a4a;
 }
-
+#js-counter {
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 20px;
+	color: #737982;
+	font-family: 'Fjalla One', sans-serif;
+}
 .js-button-check:hover {
 	color: #e3e5ef;
 }
 .search-container {
 	width: 100%;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
-li h3, .js-button-remove {
-  margin-left: 30px;
-}
-li .fa {
-  margin-bottom: 30px;
-}
+
 ul {
   padding: 0px;
 }
 input {
 	border-radius: 5px;
-	padding: 10px;
+	padding: 8px;
+	font-size: 14px;
 	border: 1px solid #bfbfbf;
 	width: 33%;
+	margin-top: 0px;
+
 }
 section {
   padding: 0px;
@@ -69,11 +76,11 @@ main {
   padding: 0px;
   margin: 0px;
 }
-.checked {
-  text-decoration-color: #ce4a4a !important; 
-  text-decoration: line-through;
+.complete{
+	background-color: #adc6ad !important;
 }
-@media only screen and (max-width: 1200px){
+
+@media only screen and (max-width: 1100px){
 	li { 
 		width: 60%;
 	}

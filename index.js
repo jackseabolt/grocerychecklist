@@ -1,10 +1,10 @@
-const STORE = [{name: "apples", checked: false},{name: "pears", checked: true}];
+const STORE = [];
 
 function generateItemElement(item, index){
   console.log('generated index was ' + index); 
   return `
-  <li class="js-li-item" data-item-index="${index}">
-    <h3 class="js-li-title ${item.checked ? 'checked' : '' }">${item.name}</h3>
+  <li class="js-li-item ${item.checked ? 'complete' : '' }" data-item-index="${index}">
+    <h3 class="js-li-title">${item.name}</h3>
     <i class="fa fa-minus-circle js-button-remove" aria-hidden="true"></i>
     <i class="fa fa-check-circle js-button-check" aria-hidden="true"></i>
   </li>
@@ -13,7 +13,7 @@ function generateItemElement(item, index){
 
 function generateItemsString(arr){
   const items = arr.map((item, index) => generateItemElement(item, index));
-  return items.join(" "); 
+  return items.reverse().join(" "); 
 }
 
 function displayCheckList(){
@@ -27,14 +27,16 @@ function addToList(item){
 
 function handleFormSubmit(){
   $('#js-form').submit(function(event){
-    console.log("handleFormSubmit ran");
+    console.log("handleFormSubmit");
     event.preventDefault(); 
     const userInput = $("input[name='js-input']").val();
     addToList(userInput);
     $("input[name='js-input']").val(""); 
+    handleCounter(); 
     displayCheckList(); 
   });
 }
+
 function getItemIndex(item){
    const itemToParse = $(item).closest('li').attr("data-item-index");
    console.log("getItemIndex ran " + itemToParse); 
@@ -50,7 +52,8 @@ function handleRemoveButton(){
   $('ul').on("click", ".js-button-remove", function(){
     const liId = getItemIndex($(this)); 
     console.log("removing " + liId + " in handleRemoveButton"); 
-    removeItemFromList(liId); 
+    removeItemFromList(liId);
+    handleCounter();  
     displayCheckList(); 
   });
 }
@@ -67,15 +70,39 @@ function handleCheckButton(){
   $('ul').on("click", ".js-button-check", function(){
     const liId = getItemIndex($(this)); 
     checkItem(liId); 
+    handleCounter(); 
     displayCheckList();
   });
+}
+
+function getTotalChecked(objArr){
+  const total =[]; 
+  for(let i = 0; i < objArr.length; i++){
+    if(objArr[i].checked){
+      total.push(objArr[i]); 
+    }
+  }
+  return total.length; 
+}
+
+function displayCounter(text){
+  console.log(text); 
+  $('#js-counter').html(text); 
+}
+
+function handleCounter(){
+  let totalChecked = getTotalChecked(STORE).toString(); 
+  let total = STORE.length.toString();
+  let finalResult = `${totalChecked}/${total}`;
+  displayCounter(finalResult); 
 }
 
 function handleChecklist(){
   displayCheckList();  
   handleFormSubmit(); 
   handleRemoveButton();
-  handleCheckButton(); 
+  handleCheckButton();
+  handleCounter();  
 }
 
 $(handleChecklist);
