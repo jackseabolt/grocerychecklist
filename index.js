@@ -32,6 +32,7 @@ function handleFormSubmit(){
     const userInput = $("input[name='js-input']").val();
     addToList(userInput);
     $("input[name='js-input']").val(""); 
+    handleCounter(); 
     displayCheckList(); 
   });
 }
@@ -50,7 +51,8 @@ function handleRemoveButton(){
   $('ul').on("click", ".js-button-remove", function(){
     const liId = getItemIndex($(this)); 
     console.log("removing " + liId + " in handleRemoveButton"); 
-    removeItemFromList(liId); 
+    removeItemFromList(liId);
+    handleCounter();  
     displayCheckList(); 
   });
 }
@@ -67,15 +69,37 @@ function handleCheckButton(){
   $('ul').on("click", ".js-button-check", function(){
     const liId = getItemIndex($(this)); 
     checkItem(liId); 
+    handleCounter(); 
     displayCheckList();
   });
+}
+
+function getTotalChecked(objArr){
+  const total =[]; 
+  for(let i = 0; i < objArr.length; i++){
+    if(objArr[i].checked){
+      total.push(objArr[i]); 
+    }
+  }
+  return total.length; 
+}
+function displayCounter(text){
+  console.log(text); 
+  $('#js-counter').html(text); 
+}
+function handleCounter(){
+  let totalChecked = getTotalChecked(STORE).toString(); 
+  let total = STORE.length.toString();
+  let finalResult = `${totalChecked}/${total}`;
+  displayCounter(finalResult); 
 }
 
 function handleChecklist(){
   displayCheckList();  
   handleFormSubmit(); 
   handleRemoveButton();
-  handleCheckButton(); 
+  handleCheckButton();
+  handleCounter();  
 }
 
 $(handleChecklist);

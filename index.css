@@ -37,14 +37,20 @@ li {
 .js-button-remove:hover {
 	color: #ce4a4a;
 }
-
+#js-counter {
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 20px;
+	color: #737982;
+	font-family: 'Fjalla One', sans-serif;
+}
 .js-button-check:hover {
 	color: #e3e5ef;
 }
 .search-container {
 	width: 100%;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 li h3, .js-button-remove {
   margin-left: 30px;
@@ -74,9 +80,10 @@ main {
   margin: 0px;
 }
 .checked {
-  text-decoration-color: #ce4a4a !important; 
+  text-decoration-color: #737982 !important; 
   text-decoration: line-through;
 }
+
 @media only screen and (max-width: 1200px){
 	li { 
 		width: 60%;
