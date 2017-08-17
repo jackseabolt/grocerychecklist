@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>Grocery Checklist</h1>
+    </header>
+    <main role="main">
+      <section role="region">
+        <form id="js-form" method="post" action="">
+          <input type="text" name="js-input" id="js-input">
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      <section role="region">
+        <ul id="js-list"></ul>
+      </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
