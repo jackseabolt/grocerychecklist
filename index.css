@@ -7,25 +7,45 @@ h1 {
 	color: #414449;
 	font-size: 45px;
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 45px;
 }
 li { 
- display: inline-block;
- padding-left: 0px;
- color: white;
- font-family: 'Gloria Hallelujah';
- font-size: 25px;
- line-height: 15px;
- border-radius: 5px;
- background-color: #9ca4af;
- border: 0px solid;
- width: 100%;
- margin-bottom: 10px;
+	display: inline-block;
+	padding-left: 0px;
+	color: white;
+	font-family: 'Gloria Hallelujah';
+	font-size: 25px;
+	line-height: 15px;
+	border-radius: 5px;
+	background-color: #9ca4af;
+	border: 0px solid;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.btn-submit {
+	background-color: #586596;
+	padding: 8px 15px;
+	color: white;
+	font-size: 14px;
+	border-radius: 5px;
+	border: 1px solid #455077; 
+}
+.js-button-remove:hover {
+	color: #ce4a4a;
+}
+
+.js-button-check:hover {
+	color: #69af89;
+}
+.search-container {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 50px;
 }
 li h3, .js-button-remove {
   margin-left: 30px;
 }
-li button {
+li .fa {
   margin-bottom: 30px;
 }
 ul {
@@ -33,7 +53,7 @@ ul {
 }
 input {
 	border-radius: 5px;
-	padding: 8px;
+	padding: 10px;
 	border: 1px solid #bfbfbf;
 	width: 33%;
 }
