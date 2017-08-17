@@ -100,7 +100,7 @@ function handleCounter(){
     finalResult = "LIST COMPLETE"; 
   }
   else {
-    finalResult = `${totalChecked.toString()}/${total.toString()} ITEMS COLLECTED`;
+    finalResult = `${totalChecked.toString()} OF ${total.toString()} ITEMS COLLECTED`;
   }
   displayCounter(finalResult); 
 }
