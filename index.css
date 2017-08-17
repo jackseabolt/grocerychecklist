@@ -10,7 +10,7 @@ h1 {
 	margin-bottom: 45px;
 }
 li { 
-	display: inline-block;
+	display: block;
 	padding-left: 0px;
 	color: white;
 	font-family: 'Gloria Hallelujah';
@@ -19,8 +19,11 @@ li {
 	border-radius: 5px;
 	background-color: #9ca4af;
 	border: 0px solid;
-	width: 100%;
+	width: 50%;
 	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
 }
 .btn-submit {
 	background-color: #586596;
@@ -66,8 +69,17 @@ main {
   padding: 0px;
   margin: 0px;
 }
-
 .checked {
   text-decoration-color: #ce4a4a !important; 
   text-decoration: line-through;
+}
+@media only screen and (max-width: 1200px){
+	li { 
+		width: 60%;
+	}
+}
+@media only screen and (max-width: 800px){
+	li { 
+		width: 90%;
+	}
 }
