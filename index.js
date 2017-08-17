@@ -4,8 +4,8 @@ function generateItemElement(item, index){
   return `
   <li class="js-li-item" data-item-index="${index}">
     <h3 class="js-li-title ${item.checked ? 'checked' : '' }">${item.name}</h3>
-    <button class="js-button-remove">Remove</button>
-    <button class="js-button-check">Check</button>
+    <i class="fa fa-minus-circle js-button-remove" aria-hidden="true"></i>
+    <i class="fa fa-check-circle js-button-check" aria-hidden="true"></i>
   </li>
   `;
 }
