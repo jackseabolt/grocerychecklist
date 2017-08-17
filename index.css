@@ -35,7 +35,7 @@ li {
 }
 
 .js-button-check:hover {
-	color: #69af89;
+	color: #e3e5ef;
 }
 .search-container {
 	width: 100%;
@@ -68,5 +68,6 @@ main {
 }
 
 .checked {
+  text-decoration-color: #ce4a4a !important; 
   text-decoration: line-through;
 }
