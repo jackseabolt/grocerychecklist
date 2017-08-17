@@ -1,4 +1,4 @@
-const STORE = [{name: "apples", checked: false},{name: "pears", checked: true}];
+const STORE = [];
 
 function generateItemElement(item, index){
   console.log('generated index was ' + index); 
@@ -13,7 +13,7 @@ function generateItemElement(item, index){
 
 function generateItemsString(arr){
   const items = arr.map((item, index) => generateItemElement(item, index));
-  return items.join(" "); 
+  return items.reverse().join(" "); 
 }
 
 function displayCheckList(){
@@ -27,7 +27,7 @@ function addToList(item){
 
 function handleFormSubmit(){
   $('#js-form').submit(function(event){
-    console.log("handleFormSubmit ran");
+    console.log("handleFormSubmit");
     event.preventDefault(); 
     const userInput = $("input[name='js-input']").val();
     addToList(userInput);
