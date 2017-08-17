@@ -57,6 +57,7 @@ li {
 	width: 100%;
 	text-align: center;
 	margin-bottom: 40px;
+	position: fixed;
 }
 .fa-minus-circle {
 	cursor: pointer;
